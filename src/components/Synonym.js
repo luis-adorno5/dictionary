@@ -1,9 +1,9 @@
 import React from "react";
-  
-const Synonym = ({ all }) => {
+
+const Synonym = ({ mean }) => {
   return (
     <>
-      {all.map((Val) => {
+      {mean.map((Val) => {
         return Val.meanings.map((Means) => {
           return Means.definitions.map((Def) => {
             return Def.synonyms.map((Syn) => {
@@ -21,5 +21,5 @@ const Synonym = ({ all }) => {
     </>
   );
 };
-  
+
 export default Synonym;

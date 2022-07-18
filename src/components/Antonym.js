@@ -1,9 +1,9 @@
 import React from "react";
-  
-const Antonyms = ({ all }) => {
+
+const Antonym = ({ mean }) => {
   return (
     <>
-      {all.map((Val) => {
+      {mean.map((Val) => {
         return Val.meanings.map((Means) => {
           return Means.definitions.map((Def) => {
             return Def.antonyms.map((Syn) => {
@@ -21,5 +21,5 @@ const Antonyms = ({ all }) => {
     </>
   );
 };
-  
-export default Antonyms;
+
+export default Antonym;

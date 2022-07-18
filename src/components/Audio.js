@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Audio = () => {
+const Audio = (props) => {
     const [word, setWord] = useState();
     const [all, setAll] = useState([]);
     const [main, setMain] = useState([]);

@@ -1,24 +1,62 @@
 import React from "react";
-  
-const Definition = ({ all }) => {
+import Select from "./Select.js";
+import Example from "./Example";
+// import Synonyms from "./Synonym";
+// import Antonyms from "./Antonyms";
+
+const Definition = ({ mean, main, audio }) => {
   return (
     <>
-      {all.map((Val) => {
-        return Val.meanings.map((Means) => {
-          return Means.definitions.map((Def) => {
-            return (
-              <>
-                <li className="text-capitalize fs-5 text-start">
-                  {Def.definition}
-                </li>
-                <hr />
-              </>
-            );
-          });
-        });
-      })}
+      <div className="container-fluid">
+        <div className="row dark-theme">
+          <div className="col-12 text-center text-capitalize fs-1 fw-bold text-decoration-underline mb-4">
+            {main.word}
+          </div>
+          {audio ? (
+            <audio
+              controls
+              className="color m-4 text-center col-10"
+              src={audio}
+            ></audio>
+          ) : (
+            <div className="color fs-3 text-center">Audio not found</div>
+          )}
+          <div className="col-12 text-start my-3 text-capitalize fs-4 fw-bold">
+            meaning & definitions :
+          </div>
+          <div>
+            <ol>
+              <Select mean={mean} />
+            </ol>
+          </div>
+          <div className="col-12 text-start my-3 text-capitalize fs-4 fw-bold">
+            examples :
+          </div>
+          <div>
+            <ol>
+              <Example mean={mean} />
+            </ol>
+          </div>
+          <div className="col-12 text-start my-3 text-capitalize fs-4 fw-bold">
+            synonyms :
+          </div>
+          {/* <div>
+            <ol className="col-12 li">
+              <Synonyms mean={mean} />
+            </ol>
+          </div> */}
+          <div className="col-12 text-start my-3 text-capitalize fs-4 fw-bold">
+            antonyms :
+          </div>
+          {/* <div>
+            <ol className="col-12 li">
+              <Antonyms mean={mean} />
+            </ol>
+          </div> */}
+        </div>
+      </div>
     </>
   );
 };
-  
+
 export default Definition;

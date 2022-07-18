@@ -1,9 +1,9 @@
 import React from "react";
-  
-const Example = ({ all }) => {
+
+const Example = ({ mean }) => {
   return (
     <>
-      {all.map((Val) => {
+      {mean.map((Val) => {
         return Val.meanings.map((Means) => {
           return Means.definitions.map((Def) => {
             return (
@@ -13,7 +13,7 @@ const Example = ({ all }) => {
                     {Def.example}
                   </li>
                 ) : (
-                 ""
+                  ""
                 )}
               </>
             );
@@ -23,5 +23,5 @@ const Example = ({ all }) => {
     </>
   );
 };
-  
+
 export default Example;
